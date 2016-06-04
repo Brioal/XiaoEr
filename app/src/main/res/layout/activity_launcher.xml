@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.xiaoer.xiaoer.LauncherActivity">
-    <com.facebook.drawee.view.DraweeView
+    <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/launcher_draweeView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
