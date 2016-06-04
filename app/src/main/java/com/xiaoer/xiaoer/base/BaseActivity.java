@@ -5,4 +5,6 @@ package com.xiaoer.xiaoer.base;
  */
 
 public class BaseActivity {
+    private int a;
+
 }
