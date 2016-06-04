@@ -1,4 +1,4 @@
-package com.xiaoer.xiaoer.activity;
+package com.xiaoer.xiaoer;
 
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -9,8 +9,11 @@ import android.widget.RelativeLayout;
 
 import com.xiaoer.lib.bottomtablayout.adapter.BottomBaseAdapter;
 import com.xiaoer.lib.bottomtablayout.view.BottomTabLayout;
-import com.xiaoer.xiaoer.R;
 import com.xiaoer.xiaoer.base.BaseActivity;
+import com.xiaoer.xiaoer.fragment.CartFragmet;
+import com.xiaoer.xiaoer.fragment.ClassifyFragment;
+import com.xiaoer.xiaoer.fragment.HomeFragment;
+import com.xiaoer.xiaoer.fragment.UserFragment;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -46,15 +49,19 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initTheme() {
         super.initTheme();
-
     }
 
     @Override
     public void initView(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        manager = getSupportFragmentManager();
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initTab();
+    }
+
+    @Override
+    public void setView() {
+        manager.beginTransaction().add(R.id.main_container, HomeFragment.newInstance()).commit();
     }
 
     private void initTab() {
@@ -71,20 +78,20 @@ public class MainActivity extends BaseActivity {
             public void onSelectedItem(int position) {
                 Fragment fragment = null;
                 switch (position) {
-//                    case 0:
-//                        fragment = HomeFragment.getInstance();
-//                        break;
-//                    case 1:
-//                        fragment = FindFragment.getInstance();
-//                        break;
-//                    case 2:
-//                        fragment = OrderFragment.getInstance();
-//                        break;
-//                    case 3:
-//                        fragment = UserFragment.getInstance();
-//                    break;
+                    case 0:
+                        fragment = HomeFragment.newInstance();
+                        break;
+                    case 1:
+                        fragment = ClassifyFragment.newInstance();
+                        break;
+                    case 2:
+                        fragment = CartFragmet.newInstance();
+                        break;
+                    case 3:
+                        fragment = UserFragment.newInstance();
+                        break;
                 }
-//                changeFragment(fragment);
+                changeFragment(fragment);
             }
         });
         mTabLayout.setmCheckedPerscent(1.4f);

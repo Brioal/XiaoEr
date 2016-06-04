@@ -4,7 +4,7 @@
     android:id="@+id/activity_launcher"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xiaoer.xiaoer.LauncherActivity">
+    tools:context=".actiity.LauncherActivity">
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/launcher_draweeView"
         android:layout_width="match_parent"

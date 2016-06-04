@@ -20,10 +20,14 @@ import com.xiaoer.xiaoer.interfaces.FragmentFormat;
 public class BaseFragment extends Fragment implements FragmentFormat {
     protected Activity mContext;
     protected View mRootView;
+    protected LayoutInflater inflater;
+    protected ViewGroup container;
+    protected Bundle saveInstanceState;
 
     protected Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
+            initData();
             loadData();      //加载数据
         }
     };
@@ -46,21 +50,17 @@ public class BaseFragment extends Fragment implements FragmentFormat {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        initFragmentView(inflater, container, savedInstanceState);
+        this.inflater = inflater;
+        this.container = container;
+        this.saveInstanceState = savedInstanceState;
+        initView();
         return mRootView;
     }
-
-    //实例化总布局
-    protected void initFragmentView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-    }
-
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        initData();
-        initView();
+        new Thread(mRunnable).start();
     }
 
     @Override

@@ -1,4 +1,4 @@
-package com.xiaoer.xiaoer;
+package com.xiaoer.xiaoer.actiity;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.xiaoer.xiaoer.R;
 import com.xiaoer.xiaoer.base.BaseActivity;
 
 import butterknife.Bind;

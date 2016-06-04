@@ -10,25 +10,25 @@ import cn.bmob.v3.datatype.BmobFile;
  */
 
 public class ClassifyEntity extends BmobObject {
-    private String mId; //用于排序的分类
+    private int  mId; //用于排序的分类
     private String mParent;// 所属的大分类
     private BmobFile mPic; //分类的图片
     private String mContent; //分类的名称
 
     private String mPicUrl; //本地存储的分类的图片链接
 
-    public ClassifyEntity(String mId, String mParent, String mContent, String mPicUrl) {
+    public ClassifyEntity(int mId, String mParent, String mContent, String mPicUrl) {
         this.mId = mId;
         this.mParent = mParent;
         this.mContent = mContent;
         this.mPicUrl = mPicUrl;
     }
 
-    public String getmId() {
+    public int getmId() {
         return mId;
     }
 
-    public void setmId(String mId) {
+    public void setmId(int mId) {
         this.mId = mId;
     }
 
