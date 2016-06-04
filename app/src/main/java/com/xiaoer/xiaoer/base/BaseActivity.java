@@ -33,9 +33,9 @@ public class BaseActivity extends AppCompatActivity implements ActivityFormat {
 
     @Override
     public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
+        Log.i(TAG, "onCreate: ");
         mContext = this;
         super.onCreate(savedInstanceState, persistentState);
-        Log.i(TAG, "onCreate: ");
         initBar();
         initData();
         initView();
