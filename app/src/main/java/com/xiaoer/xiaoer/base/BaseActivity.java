@@ -42,7 +42,7 @@ public class BaseActivity extends AppCompatActivity implements ActivityFormat {
         initData();
         initView();
         new Thread(mRunnable).start();
-        Log.i(TAG, "onCreate: ");
+        Log.i(TAG, "onCreate:. ");
 
     }
 
