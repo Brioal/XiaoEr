@@ -23,7 +23,7 @@ public class BaseActivity extends AppCompatActivity implements ActivityFormat {
             loadData();
         }
     };
-    private Handler mHandler = new Handler() {
+    protected Handler mHandler = new Handler() {
         @Override
         public void handleMessage(Message msg) {
             super.handleMessage(msg);
