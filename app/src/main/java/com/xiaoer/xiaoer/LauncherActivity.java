@@ -1,9 +1,12 @@
 package com.xiaoer.xiaoer;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.xiaoer.xiaoer.base.BaseActivity;
 
@@ -38,7 +41,12 @@ public class LauncherActivity extends BaseActivity {
     @Override
     public void setView() {
         super.setView();
-
+        Uri path = (new Uri.Builder()).scheme("res").path(String.valueOf(R.drawable.launcher_bg)).build();
+        DraweeController draweeController= Fresco.newDraweeControllerBuilder()
+                .setAutoPlayAnimations(true)
+                .setUri(path)
+                .build();
+        gifView.setController(draweeController);
 
 
     }
