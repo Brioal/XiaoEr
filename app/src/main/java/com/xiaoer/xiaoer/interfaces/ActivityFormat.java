@@ -5,7 +5,7 @@ package com.xiaoer.xiaoer.interfaces;
  */
 
 public interface ActivityFormat {
-     void initBar(); // 初始化ToolBar
+     void initBar(); //
 
      void initTheme(); //初始化主题设置
 
