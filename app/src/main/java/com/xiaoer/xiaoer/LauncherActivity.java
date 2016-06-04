@@ -14,8 +14,9 @@ public class LauncherActivity extends BaseActivity {
     private SimpleDraweeView gifView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setContentView(R.layout.activity_launcher);
         super.onCreate(savedInstanceState);
+        setTheme(R.style.AppTheme_NoActionBar);
+
     }
 
     @Override
@@ -26,7 +27,7 @@ public class LauncherActivity extends BaseActivity {
     @Override
     public void initTheme() {
         super.initTheme();
-        setTheme(R.style.AppTheme_NoActionBar);
+
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
@@ -34,6 +35,7 @@ public class LauncherActivity extends BaseActivity {
     @Override
     public void initView() {
         super.initView();
+        setContentView(R.layout.activity_launcher);
         gifView= (SimpleDraweeView) findViewById(R.id.launcher_draweeView);
     }
 
@@ -41,12 +43,7 @@ public class LauncherActivity extends BaseActivity {
     @Override
     public void setView() {
         super.setView();
-        Uri path = (new Uri.Builder()).scheme("res").path(String.valueOf(R.drawable.launcher_bg)).build();
-        DraweeController draweeController= Fresco.newDraweeControllerBuilder()
-                .setAutoPlayAnimations(true)
-                .setUri(path)
-                .build();
-        gifView.setController(draweeController);
+        playGif();
 
 
     }
@@ -56,6 +53,14 @@ public class LauncherActivity extends BaseActivity {
         super.loadData();
         mHandler.sendEmptyMessage(0);
 
+    }
+    private void playGif(){
+        Uri path = (new Uri.Builder()).scheme("res").path(String.valueOf(R.mipmap.water)).build();
+        DraweeController draweeController= Fresco.newDraweeControllerBuilder()
+                .setAutoPlayAnimations(true)
+                .setUri(path)
+                .build();
+        gifView.setController(draweeController);
     }
 
 }
