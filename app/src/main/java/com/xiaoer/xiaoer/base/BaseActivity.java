@@ -11,5 +11,6 @@ public class BaseActivity {
     private int d ;
     private int e ;
     private int f ;
+    private int gg;
 
 }
