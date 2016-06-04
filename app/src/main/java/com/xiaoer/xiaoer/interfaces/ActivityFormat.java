@@ -1,5 +1,7 @@
 package com.xiaoer.xiaoer.interfaces;
 
+import android.os.Bundle;
+
 /**
  * Activity的格式化接口
  * Created by Brioal on 2016/6/4.
@@ -14,7 +16,7 @@ public interface ActivityFormat {
 
     void loadData(); //加载数据
 
-    void initView(); //初始化View
+    void initView(Bundle savedInstanceState); //初始化View
 
     void setView(); //设置View
 

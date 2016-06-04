@@ -4,8 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.os.PersistableBundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
@@ -21,6 +19,7 @@ public class BaseActivity extends AppCompatActivity implements ActivityFormat {
     protected Runnable mRunnable = new Runnable() {
         @Override
         public void run() {
+            initData();
             loadData();
         }
     };
@@ -33,24 +32,21 @@ public class BaseActivity extends AppCompatActivity implements ActivityFormat {
         }
     };
 
-
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        initTheme();
         super.onCreate(savedInstanceState);
         mContext = this;
+        initView(savedInstanceState);
         initBar();
-        initData();
-        initView();
         new Thread(mRunnable).start();
         Log.i(TAG, "onCreate:. ");
-
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         Log.i(TAG, "onResume: ");
-        initTheme();
     }
 
     @Override
@@ -99,13 +95,13 @@ public class BaseActivity extends AppCompatActivity implements ActivityFormat {
     }
 
     @Override
-    public void initView() {
+    public void initView(Bundle savedInstanceState) {
 
     }
 
     @Override
     public void setView() {
-        
+
     }
 
 

@@ -9,5 +9,12 @@
         android:id="@+id/launcher_draweeView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/launcher_tv"
+        android:background="#ff00"
+        android:layout_centerInParent="true"
+        android:text="测试"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

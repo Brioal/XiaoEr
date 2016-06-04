@@ -12,7 +12,8 @@ import android.view.ViewGroup;
 
 import com.xiaoer.xiaoer.interfaces.FragmentFormat;
 
-/**Fragment基类
+/**
+ * Fragment基类
  * Created by mm on 2016/6/4.
  */
 
@@ -34,6 +35,7 @@ public class BaseFragment extends Fragment implements FragmentFormat {
             setView(); //数据显示到布局
         }
     };
+
 
     @Override
     public void onAttach(Activity context) {
