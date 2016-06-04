@@ -7,5 +7,6 @@ package com.xiaoer.xiaoer.base;
 public class BaseActivity {
     private int a;
     private int b ;
+    private int c ;
 
 }
