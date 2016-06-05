@@ -9,6 +9,7 @@ import android.widget.RelativeLayout;
 
 import com.xiaoer.lib.bottomtablayout.adapter.BottomBaseAdapter;
 import com.xiaoer.lib.bottomtablayout.view.BottomTabLayout;
+import com.xiaoer.lib.util.StatusBarUtils;
 import com.xiaoer.xiaoer.base.BaseActivity;
 import com.xiaoer.xiaoer.fragment.CartFragmet;
 import com.xiaoer.xiaoer.fragment.ClassifyFragment;
@@ -62,6 +63,7 @@ public class MainActivity extends BaseActivity {
     @Override
     public void setView() {
         manager.beginTransaction().add(R.id.main_container, HomeFragment.newInstance()).commit();
+        StatusBarUtils.setColor(this, getResources().getColor(R.color.colorPrimary));
     }
 
     private void initTab() {
