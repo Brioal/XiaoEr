@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas
+ .android.com/apk/res/android" xmlns:android1="http://schemas.android.com/apk/res/android">
+    <item android1:drawable="@mipmap/ic_collect_normal" android1:state_checked="false" />
+    <item android1:drawable="@mipmap/ic_collect_check" android1:state_checked="true" />
+</selector>

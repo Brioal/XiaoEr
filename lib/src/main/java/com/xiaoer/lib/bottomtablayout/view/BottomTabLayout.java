@@ -95,6 +95,7 @@ public class BottomTabLayout extends LinearLayout {
         button.setText(mAdapter.getText(i));
         button.setTextColor(mNormalColor);
         Drawable drawable = mAdapter.getDrawable(i);
+        drawable.setBounds(0, 0, 20, 20);
         drawable.setColorFilter(new PorterDuffColorFilter(mNormalColor, PorterDuff.Mode.SRC_IN));
         button.setCompoundDrawablesWithIntrinsicBounds(null, drawable,
                 null, null);

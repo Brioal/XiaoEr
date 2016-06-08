@@ -55,4 +55,8 @@ public class ClassifyEntity extends BmobObject {
     public void setmPicUrl(String mPicUrl) {
         this.mPicUrl = mPicUrl;
     }
+
+    public BmobFile getmPic() {
+        return mPic;
+    }
 }

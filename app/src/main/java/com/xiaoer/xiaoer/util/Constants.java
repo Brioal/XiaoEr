@@ -7,6 +7,7 @@ import android.content.Context;
  */
 
 public class Constants {
+    public static final String APPID = "ee477131f62f87bc6fb3c52b15b82a8d";
     public static DataLoader mDataLoader ;
 
     public static DataLoader getmDataLoader(Context context) {

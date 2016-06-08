@@ -17,5 +17,10 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowBackground">@drawable/launcher_bg</item>
     </style>
+    <!--白色的toolbar-->
+    <style name="WhiteToolBar">
+        <item name="colorControlNormal">#ffffff</item>
+    </style>
+
 
 </resources>

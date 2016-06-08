@@ -6,6 +6,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,6 +24,7 @@ public class BaseFragment extends Fragment implements FragmentFormat {
     protected LayoutInflater inflater;
     protected ViewGroup container;
     protected Bundle saveInstanceState;
+    protected String TAG = "BaseFragment";
 
     protected Runnable mRunnable = new Runnable() {
         @Override
@@ -44,12 +46,38 @@ public class BaseFragment extends Fragment implements FragmentFormat {
     @Override
     public void onAttach(Activity context) {
         super.onAttach(context);
+        Log.i(TAG, "onAttach: ");
         mContext = context;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        Log.i(TAG, "onCreate: ");
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.i(TAG, "onResume: ");
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.i(TAG, "onDestroy: ");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        Log.i(TAG, "onDestroyView: ");
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Log.i(TAG, "onCreateView: ");
         this.inflater = inflater;
         this.container = container;
         this.saveInstanceState = savedInstanceState;
@@ -59,6 +87,7 @@ public class BaseFragment extends Fragment implements FragmentFormat {
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        Log.i(TAG, "onViewCreated: ");
         super.onViewCreated(view, savedInstanceState);
         new Thread(mRunnable).start();
     }

@@ -15,9 +15,11 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.xiaoer.xiaoer.MainActivity;
 import com.xiaoer.xiaoer.R;
 import com.xiaoer.xiaoer.base.BaseActivity;
+import com.xiaoer.xiaoer.util.Constants;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import cn.bmob.v3.Bmob;
 
 public class LauncherActivity extends BaseActivity implements View.OnClickListener {
 
@@ -69,12 +71,17 @@ public class LauncherActivity extends BaseActivity implements View.OnClickListen
         mHandler.sendEmptyMessage(0);
     }
 
+    @Override
+    public void initData() {
+        super.initData();
+        Bmob.initialize(mContext, Constants.APPID);
+    }
 
     @Override
     public void onClick(View v) {
-        Animatable animatable=draweeController.getAnimatable();
+        Animatable animatable = draweeController.getAnimatable();
         //判断是否正在运行
-        if (animatable.isRunning()){
+        if (animatable.isRunning()) {
             //运行中，停止
             animatable.stop();
         }
